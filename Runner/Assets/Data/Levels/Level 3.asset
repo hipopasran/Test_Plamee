@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb10b7304edba449b1aadc5dc75ebc5, type: 3}
+  m_Name: Level 3
+  m_EditorClassIdentifier: 
+  levelName: Level 3
+  gravity: -15
+  preview: {fileID: 21300000, guid: cb29c54813425964fb608646231ad539, type: 3}
+  backgrounds: {fileID: 2800000, guid: cb29c54813425964fb608646231ad539, type: 3}
+  obstacles:
+  - {fileID: 1828284171324102, guid: 7acdeb4d475923841b659ea6be84d260, type: 2}
