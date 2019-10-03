@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class InputManager : MonoBehaviour {
-
+public class InputManager : MonoBehaviour
+{
     public delegate void ClickAction();
     public static event ClickAction OnClicked;
 
@@ -24,6 +22,4 @@ public class InputManager : MonoBehaviour {
                 OnClicked();
         }
     }
-
-
 }

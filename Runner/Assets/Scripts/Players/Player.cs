@@ -1,9 +1,12 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(Rigidbody2D),typeof(BoxCollider2D),typeof(SpriteRenderer))]
 public abstract class Player : MonoBehaviour
 {
+    const string GAME_OVER_SCENE = "GameOver";
+    const string OBSTACLES_TAG = "Obstacle";
 
     [SerializeField]
     protected Color color;
@@ -12,7 +15,7 @@ public abstract class Player : MonoBehaviour
 
     protected Rigidbody2D rigibody2d;
     protected BoxCollider2D boxCollider2d;
-    protected SpriteRenderer renderer;
+    protected SpriteRenderer spriteRenderer;
     protected bool doUpdateVelocity;
 
     protected float counter = 0;
@@ -37,7 +40,7 @@ public abstract class Player : MonoBehaviour
     {
         rigibody2d = this.GetComponent<Rigidbody2D>();
         boxCollider2d = this.GetComponent<BoxCollider2D>();
-        renderer = this.GetComponent<SpriteRenderer>();
+        spriteRenderer = this.GetComponent<SpriteRenderer>();
     }
 
     void Start()
@@ -49,11 +52,11 @@ public abstract class Player : MonoBehaviour
     {
         if(IsGrounded())
         {
-            renderer.color = Color.white;
+            spriteRenderer.color = Color.white;
         }
         else
         {
-            renderer.color = color;
+            spriteRenderer.color = color;
         }
     }
 
@@ -64,8 +67,8 @@ public abstract class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "Obstacle")
-            GameManager.instance.Lose();
+        if (coll.gameObject.tag == OBSTACLES_TAG)
+            SceneManager.LoadScene(GAME_OVER_SCENE);
 
     }
 

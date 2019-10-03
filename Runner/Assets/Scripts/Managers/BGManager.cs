@@ -1,14 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+[RequireComponent(typeof(MeshRenderer))]
 public class BGManager : MonoBehaviour
 {
+    private MeshRenderer meshRenderer;
 
-    public MeshRenderer meshRenderer;
 	void Awake()
     {
         meshRenderer = this.GetComponent<MeshRenderer>();
-        meshRenderer.material.mainTexture = DataManager.instance.LevelData.Current.Background;
+        meshRenderer.material.mainTexture = CurrentData.Instance.Model.CurrentLevel.Background;
     }
 }

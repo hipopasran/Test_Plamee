@@ -27,5 +27,4 @@ public class PlayerSettings : ScriptableObject
     {
         get { return playerType; }
     }
-	
 }

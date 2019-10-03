@@ -1,7 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(ObjectPooler))]
 public class ObstacleSpawner : MonoBehaviour
 {
     [SerializeField]
@@ -16,7 +16,7 @@ public class ObstacleSpawner : MonoBehaviour
 
     void Start()
     {
-        objectPooler = ObjectPooler.instance;
+        objectPooler = GetComponent<ObjectPooler>();
     }
 
     void Update()

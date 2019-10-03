@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PlayerFollower : MonoBehaviour {
-
-    public Transform player;
+public class PlayerFollower : MonoBehaviour
+{
+    [SerializeField]
+    private Transform player;
 
     private Vector3 offset;
         

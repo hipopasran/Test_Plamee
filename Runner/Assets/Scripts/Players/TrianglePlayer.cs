@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class TrianglePlayer : Player {
-
+public class TrianglePlayer : Player
+{
     public override void UpdateVelocity()
     {
         if (currentVelocity < Velocity)

@@ -6,16 +6,9 @@ using UnityEngine;
 public class PlayersData : ScriptableObject
 {
     [SerializeField]
-    private PlayerSettings current;
-    [SerializeField]
     private List<PlayerSettings> players;
 
-    public PlayerSettings Current
-    {
-        get { return current; }
-        set { current = value; }
-    }
-    public List<PlayerSettings> Data
+    public IReadOnlyList<PlayerSettings> Data
     {
         get { return players; }
     }

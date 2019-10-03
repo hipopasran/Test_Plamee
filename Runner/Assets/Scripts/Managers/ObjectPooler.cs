@@ -1,32 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectPooler : MonoBehaviour
 {
-
     private LevelSettings levelSetup;
     private Dictionary<string, Queue<GameObject>> poolDictionary;
 
-    public static ObjectPooler instance = null;
-
     public List<Pool> Pools { get; private set; }
-
-    void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else if (instance != this)
-        {
-            Destroy(gameObject);
-        }
-    }
 
     void Start ()
     {
-        levelSetup = DataManager.instance.LevelData.Current;
+        levelSetup = CurrentData.Instance.Model.CurrentLevel;
         Pools = new List<Pool>();
 
         foreach(var obs in levelSetup.Obstacles)

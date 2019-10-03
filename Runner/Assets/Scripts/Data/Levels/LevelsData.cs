@@ -6,19 +6,10 @@ using UnityEngine;
 public class LevelsData : ScriptableObject
 {
     [SerializeField]
-    private LevelSettings current;
-    [SerializeField]
     private List<LevelSettings> levels;
 
-    public LevelSettings Current
-    {
-        get { return current; }
-        set { current = value; }
-    }
-
-    public List<LevelSettings> Data
+    public IReadOnlyList<LevelSettings> Data
     {
         get { return levels; }
     }
-	
 }
